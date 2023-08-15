@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBet", "NetBet\NetBet.csproj", "{ECAC5258-834F-4623-B923-3992796869B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBet.Automation", "NetBet.Automation\NetBet.Automation.csproj", "{04F0821C-A3D2-4206-BF7B-204955ABA915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECAC5258-834F-4623-B923-3992796869B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAC5258-834F-4623-B923-3992796869B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAC5258-834F-4623-B923-3992796869B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAC5258-834F-4623-B923-3992796869B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F0821C-A3D2-4206-BF7B-204955ABA915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F0821C-A3D2-4206-BF7B-204955ABA915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F0821C-A3D2-4206-BF7B-204955ABA915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F0821C-A3D2-4206-BF7B-204955ABA915}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0790A911-0B05-45F3-B1C1-AFFAFACD6EC7}
+	EndGlobalSection
+EndGlobal
