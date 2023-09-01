@@ -113,9 +113,9 @@ namespace NetBet.Automation.Scenario
 
         }
 
-        protected async Task<TResponse> RunPostCommand<TRequest, TResponse>(string url, TRequest request, bool isPostRequest = true) where TRequest : class
+        protected async Task<TResponse> RunPostCommand<TRequest, TResponse>(string url, TRequest request) where TRequest : class
         {
-            return await RunPutOrPostCommand<TRequest, TResponse>(url, request, isPostRequest);
+            return await RunPutOrPostCommand<TRequest, TResponse>(url, request, true);
 
         }
 

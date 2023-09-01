@@ -86,7 +86,7 @@ namespace NetBet.Automation.Scenario
                 LocationRentTypes = carLocationRentTypes,
             };
 
-            var carQueryResponse = await RunPostCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest, isPostRequest: false);
+            var carQueryResponse = await RunPutCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(1, carQueryResponse.RentalReceipts.SafeCount());
 
@@ -98,7 +98,7 @@ namespace NetBet.Automation.Scenario
                 LocationRentTypes = carLocationRentTypes,
             };
 
-            carQueryResponse = await RunPostCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest, isPostRequest: false);
+            carQueryResponse = await RunPutCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(1, carQueryResponse.RentalReceipts.SafeCount());
 
@@ -110,7 +110,7 @@ namespace NetBet.Automation.Scenario
                 LocationRentTypes = carLocationRentTypes,
             };
 
-            carQueryResponse = await RunPostCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest, isPostRequest: false);
+            carQueryResponse = await RunPutCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(0, carQueryResponse.RentalReceipts.SafeCount());
 
@@ -138,7 +138,7 @@ namespace NetBet.Automation.Scenario
                 CarDrivingPlates = plates,
             };
 
-            var carQueryResponse = await RunPostCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest, isPostRequest: false);
+            var carQueryResponse = await RunPutCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(1, carQueryResponse.Cars.SafeCount());
 
@@ -150,7 +150,7 @@ namespace NetBet.Automation.Scenario
                 CarDrivingPlates = plates+"abs",
             };
 
-            carQueryResponse = await RunPostCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest, isPostRequest: false);
+            carQueryResponse = await RunPutCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(0, carQueryResponse.Cars.SafeCount());
 
@@ -179,7 +179,7 @@ namespace NetBet.Automation.Scenario
                 NameModel = modelName,
             };
 
-            var carQueryResponse = await RunPostCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest, isPostRequest: false);
+            var carQueryResponse = await RunPutCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(0, carQueryResponse.Cars.SafeCount());
 
@@ -188,11 +188,11 @@ namespace NetBet.Automation.Scenario
                 CarId = carResponse.CarId
             };
 
-            var removeCarResponse = await RunPostCommand<RemoveCarRequest, RemoveCarResponse>(RemoveCarUrl, deActivateCar, isPostRequest: false);
+            var removeCarResponse = await RunPutCommand<RemoveCarRequest, RemoveCarResponse>(RemoveCarUrl, deActivateCar);
             Assert.True(removeCarResponse.IsOperationPassed);
 
 
-            carQueryResponse = await RunPostCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest, isPostRequest: false);
+            carQueryResponse = await RunPutCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(1, carQueryResponse.Cars.SafeCount());
 

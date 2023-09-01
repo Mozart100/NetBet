@@ -61,7 +61,7 @@ namespace NetBet.Automation.Scenario
                 NameModel = "M"
             };
 
-            carQueryResponse = await RunPostCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarsUrl, request, isPostRequest: false);
+            carQueryResponse = await RunPutCommand<GetCarQueryRequest, GetCarQueryResponse>(GetCarsUrl, request);
             Assert.True(carQueryResponse.IsOperationPassed);
             Assert.Equal(1, carQueryResponse.Cars.SafeCount());
 

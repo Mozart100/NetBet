@@ -1,10 +1,4 @@
-﻿
-
-//
-
-
-
-using NetBet.Automation.Scenario;
+﻿using NetBet.Automation.Scenario;
 
 var baseUrl = "https://localhost:7138/api";
 
