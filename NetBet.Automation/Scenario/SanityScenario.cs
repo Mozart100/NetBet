@@ -1,4 +1,5 @@
-﻿using NetBet.Automation.Requests;
+﻿using FluentAssertions;
+using NetBet.Automation.Requests;
 using NetBet.DataAccess.Models;
 using NetBet.Infrastracture;
 using NetBet.Models.Dtos;
@@ -88,6 +89,7 @@ namespace NetBet.Automation.Scenario
 
             var carQueryResponse = await RunPutCommand<GetRentalQueryRequest, GetRentalQueryResponse>(GetRentalCarsUrl, queryCarRequest);
             Assert.True(carQueryResponse.IsOperationPassed);
+            carQueryResponse.IsOperationPassed.Should().BeTrue();
             Assert.Equal(1, carQueryResponse.RentalReceipts.SafeCount());
 
 

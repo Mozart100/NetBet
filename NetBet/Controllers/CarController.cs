@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using NetBet.Filters;
 using NetBet.Models.Dtos;
 using NetBet.Services;
 using NetBet.Services.Validations;
@@ -8,6 +9,7 @@ namespace NetBet.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ErrorHandlingFilter]
     public class CarController : NetBetControllerBase
     {
         private readonly ILogger<CarController> _logger;
@@ -33,7 +35,8 @@ namespace NetBet.Controllers
         [Route("GetAllCars")]
         public async Task<GetCarQueryResponse> GetAllCars()
         {
-            return await ErrorWrapper<GetCarQueryRequest, GetCarQueryResponse>(async () => await _carService.GetCarsAsync(null));
+            throw new Exception();
+            //return await ErrorWrapper<GetCarQueryRequest, GetCarQueryResponse>(async () => await _carService.GetCarsAsync(null));
         }
 
         //The preferred option for data retrieval is using the query string. However, in my previous companies,
