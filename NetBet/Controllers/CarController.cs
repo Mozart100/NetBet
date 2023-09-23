@@ -35,8 +35,8 @@ namespace NetBet.Controllers
         [Route("GetAllCars")]
         public async Task<GetCarQueryResponse> GetAllCars()
         {
-            throw new Exception();
-            //return await ErrorWrapper<GetCarQueryRequest, GetCarQueryResponse>(async () => await _carService.GetCarsAsync(null));
+            //throw new Exception();
+            return await ErrorWrapper<GetCarQueryRequest, GetCarQueryResponse>(async () => await _carService.GetCarsAsync(null));
         }
 
         //The preferred option for data retrieval is using the query string. However, in my previous companies,
